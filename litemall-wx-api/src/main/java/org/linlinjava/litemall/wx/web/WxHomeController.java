@@ -82,11 +82,11 @@ public class WxHomeController {
             return ResponseUtil.ok(HomeCacheManager.getCacheData(HomeCacheManager.INDEX));
         }
         ExecutorService executorService = Executors.newFixedThreadPool(10);
-
+        // 首页广告位
         Callable<List> bannerListCallable = () -> adService.queryIndex();
-
+        // 商品分类
         Callable<List> channelListCallable = () -> categoryService.queryChannel();
-
+        // 优惠券
         Callable<List> couponListCallable;
         if(userId == null){
             couponListCallable = () -> couponService.queryList(0, 3);
