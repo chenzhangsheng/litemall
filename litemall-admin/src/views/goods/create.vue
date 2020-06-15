@@ -85,7 +85,7 @@
         </el-form-item>
 
         <el-form-item label="所属分类">
-          <el-cascader :options="categoryList" expand-trigger="hover" clearable @change="handleCategoryChange" />
+          <el-cascader :options="categoryList" expand-trigger="hover" clearable @change="handleCategoryChange" change-on-select />
         </el-form-item>
 
         <el-form-item label="所属品牌商">

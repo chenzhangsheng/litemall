@@ -81,7 +81,8 @@
         </el-form-item>
 
         <el-form-item label="所属分类">
-          <el-cascader v-model="categoryIds" :options="categoryList" clearable expand-trigger="hover" @change="handleCategoryChange" />
+          <el-cascader v-model="categoryIds" :options="categoryList" clearable expand-trigger="hover" @change="handleCategoryChange" filterable
+                       change-on-select />
         </el-form-item>
 
         <el-form-item label="所属品牌商">

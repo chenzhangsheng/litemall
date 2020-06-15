@@ -339,7 +339,11 @@ public class AdminGoodsService {
         Integer[] categoryIds = new Integer[]{};
         if (category != null) {
             Integer parentCategoryId = category.getPid();
-            categoryIds = new Integer[]{parentCategoryId, categoryId};
+            if (parentCategoryId == 0) {
+                categoryIds = new Integer[]{categoryId};
+            } else {
+                categoryIds = new Integer[]{parentCategoryId, categoryId};
+            }
         }
 
         Map<String, Object> data = new HashMap<>();
